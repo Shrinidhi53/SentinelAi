@@ -1,0 +1,60 @@
+{
+  "name": "sentinelai",
+  "displayName": "SentinelAI",
+  "main": "./out/extension.js",
+  "description": "AI-powered developer security tool",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.107.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "sentinelai.scan",
+        "title": "SentinelAI: Scan Project"
+      },
+      {
+        "command": "sentinelai.openPanel",
+        "title": "SentinelAI: Open Report"
+      },
+      {
+        "command": "sentinelai.sandbox",
+        "title": "SentinelAI: Run Attack Sandbox"
+      },
+      {
+        "command": "sentinelai.detectRuntime",
+        "title": "SentinelAI: Detect Project Runtime"
+      },
+      {
+        "command": "sentinelai.openRuntime",
+        "title": "SentinelAI: Open Project Runtime"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "test": "npm run compile && node --test test/*.test.cjs",
+    "test:host": "npm run compile && node test/run-host-tests.cjs",
+    "test:host:antigravity": "SENTINELAI_VSCODE_EXECUTABLE=antigravity npm run test:host",
+    "package": "vsce package",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "22.x",
+    "@types/vscode": "^1.107.0",
+    "@vscode/test-electron": "^2.5.2",
+    "@vscode/vsce": "^3.9.2",
+    "mocha": "^11.8.0",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "axios": "^1.15.2"
+  }
+}

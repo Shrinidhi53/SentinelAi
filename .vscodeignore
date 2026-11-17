@@ -1,0 +1,15 @@
+.vscode/**
+.vscode-test/**
+src/**
+test/**
+**/*.ts
+**/*.map
+**/.vscode-test.*
+.gitignore
+.gitattributes
+.yarnrc
+tsconfig.json
+eslint.config.mjs
+.vscode-test.mjs
+vsc-extension-quickstart.md
+SentinelAI.hermes.md
